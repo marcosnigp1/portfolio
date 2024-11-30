@@ -60,24 +60,8 @@ function setup() {
   //Letter(letter, Position X, Position Y, Width, Height).
   //Boundary(Position X, Position Y, Width, Height, Angle Value).
 
-  //First name.
-  letters.push(new Letter("M", 20, 40, 30, 30));
-  letters.push(new Letter("a", 60, 40, 30, 30));
-  letters.push(new Letter("r", 100, 40, 30, 30));
-  letters.push(new Letter("c", 140, 40, 30, 30));
-  letters.push(new Letter("o", 180, 40, 30, 30));
-  letters.push(new Letter("s", 220, 40, 30, 30));
-
-  //Last name.
-  letters.push(new Letter("H", 20, 110, 30, 30));
-  letters.push(new Letter("e", 60, 110, 30, 30));
-  letters.push(new Letter("r", 100, 110, 30, 30));
-  letters.push(new Letter("n", 140, 110, 30, 30));
-  letters.push(new Letter("á", 180, 110, 30, 30));
-  letters.push(new Letter("n", 220, 110, 30, 30));
-  letters.push(new Letter("d", 260, 110, 30, 30));
-  letters.push(new Letter("e", 300, 110, 30, 30));
-  letters.push(new Letter("z", 340, 110, 30, 30));
+  //Spawn the name...
+  spawnName();
 
   //Boundaries(Position X, Position Y, Width, Height, Angle).
   boundaries.push(new Boundary(0, 456, 3000, 100, 0));
@@ -91,16 +75,29 @@ function setup() {
 }
 
 function draw() {
-  background(0, 70);
+  background(0);
 
   //Display the letters.
   for (let i = 0; i < letters.length; i++) {
     letters[i].show();
 
+    //Check if the static property has changed.
     if (letters[i].position_set == false) {
       Body.setStatic(letters[i].body, true);
       letters[i].position_set = true;
     }
+
+    //Check if it is offscreen. If it happens to be, then erase the item.
+    if (letters[i].isOffScreen()) {
+      letters[i].removeFromWorld();
+      letters.splice(i, 1);
+      i--; //This fixes the flickering in the code.
+    }
+  }
+
+  //Check if the list is equal to zero (no letters on screen). If it is true, then populate with the same letters as the beginning.
+  if (letters.length == 0) {
+    spawnName();
   }
 
   //Display the boundaries.
@@ -161,4 +158,25 @@ function handleCollisions(event) {
       particleB.change();
     }
   }
+}
+
+function spawnName() {
+  //First name.
+  letters.push(new Letter("M", 20, 40, 30, 30));
+  letters.push(new Letter("a", 60, 40, 30, 30));
+  letters.push(new Letter("r", 100, 40, 30, 30));
+  letters.push(new Letter("c", 140, 40, 30, 30));
+  letters.push(new Letter("o", 180, 40, 30, 30));
+  letters.push(new Letter("s", 220, 40, 30, 30));
+
+  //Last name.
+  letters.push(new Letter("H", 20, 110, 30, 30));
+  letters.push(new Letter("e", 60, 110, 30, 30));
+  letters.push(new Letter("r", 100, 110, 30, 30));
+  letters.push(new Letter("n", 140, 110, 30, 30));
+  letters.push(new Letter("á", 180, 110, 30, 30));
+  letters.push(new Letter("n", 220, 110, 30, 30));
+  letters.push(new Letter("d", 260, 110, 30, 30));
+  letters.push(new Letter("e", 300, 110, 30, 30));
+  letters.push(new Letter("z", 340, 110, 30, 30));
 }

@@ -16,6 +16,20 @@ class Letter {
     Composite.add(engine.world, this.body); //Without this, it will not render.
   }
 
+  //Check if it is off-screen, then remove it from the list.
+  isOffScreen() {
+    let pos = this.body.position;
+    if (pos.x > width * 1.0 || pos.x < 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  removeFromWorld() {
+    Composite.remove(engine.world, this.body);
+  }
+
   change() {
     if (this.mass_is_static == true) {
       Body.setMass(this.body, 0.01 * (this.body.width * this.body.height));
@@ -40,7 +54,8 @@ class Letter {
     //Display the text.
     fill(255);
     textFont(font);
-    textSize(30);
+    textSize(50);
+    textStyle(BOLD);
     text(this.letter, -10, 10);
     pop();
   }
