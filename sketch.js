@@ -24,9 +24,11 @@ let boundaries = [];
 
 // ------ Media related variables ------
 let font;
+let bg;
 
 function preload() {
-  font = loadFont("media/font/Nunito-VariableFont_wght.ttf");
+  font = loadFont("media/font/CedarvilleCursive-Regular.ttf");
+  bg = loadImage("media/bg.png");
 }
 
 function setup() {
@@ -64,7 +66,7 @@ function setup() {
   spawnName();
 
   //Boundaries(Position X, Position Y, Width, Height, Angle).
-  boundaries.push(new Boundary(0, 456, 3000, 100, 0));
+  boundaries.push(new Boundary(0, 456, 7000, 100, 0));
 
   // -- Start the engine (and only add the mouse processing at the moment)-- //
   Composite.add(engine.world, [mConstraint]);
@@ -76,6 +78,7 @@ function setup() {
 
 function draw() {
   background(0);
+  image(bg, 0, 0);
 
   //Display the letters.
   for (let i = 0; i < letters.length; i++) {
@@ -163,16 +166,16 @@ function handleCollisions(event) {
 function spawnName() {
   //First name.
   letters.push(new Letter("M", 20, 40, 30, 30));
-  letters.push(new Letter("a", 60, 40, 30, 30));
-  letters.push(new Letter("r", 100, 40, 30, 30));
+  letters.push(new Letter("a", 70, 40, 30, 30));
+  letters.push(new Letter("r", 110, 40, 30, 30));
   letters.push(new Letter("c", 140, 40, 30, 30));
   letters.push(new Letter("o", 180, 40, 30, 30));
   letters.push(new Letter("s", 220, 40, 30, 30));
 
   //Last name.
   letters.push(new Letter("H", 20, 110, 30, 30));
-  letters.push(new Letter("e", 60, 110, 30, 30));
-  letters.push(new Letter("r", 100, 110, 30, 30));
+  letters.push(new Letter("e", 70, 110, 30, 30));
+  letters.push(new Letter("r", 110, 110, 30, 30));
   letters.push(new Letter("n", 140, 110, 30, 30));
   letters.push(new Letter("á", 180, 110, 30, 30));
   letters.push(new Letter("n", 220, 110, 30, 30));
