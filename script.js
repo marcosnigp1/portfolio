@@ -25,5 +25,3 @@ carousels.forEach((carousel) => {
   carousel.addEventListener("mouseenter", pauseCarouselAnimation);
   carousel.addEventListener("mouseleave", resumeCarouselAnimation);
 });
-
-/* Logic for social media banners */
