@@ -3,6 +3,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(232, 228, 228);
+  overflow-x: hidden;
 }
 
 /* Landing page */
@@ -168,20 +169,47 @@ canvas {
 .contact_me_media img {
   width: 100%;
   max-height: 150px;
-  margin: 5%;
-
+  margin: 0%;
   border-color: red;
 }
 
-.contact_me_media_photo:hover img {
+.contact_me_media_top_photo {
+  position: relative;
+  z-index: 1;
+}
+
+.contact_me_media_bottom_photo {
+  position: absolute;
+  margin-top: -150px;
+  z-index: 0;
+}
+
+.contact_me_media_top_photo:hover img {
   animation: 2s slide-out forwards;
+}
+
+.contact_me_media_top_photo:not(hover) img {
+  animation: 2s slide-in forwards;
 }
 
 @keyframes slide-out {
   from {
     transform: translateX(0);
+    opacity: 100%;
   }
   to {
     transform: translateX(100%);
+    opacity: 0%;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0%;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 100%;
   }
 }
