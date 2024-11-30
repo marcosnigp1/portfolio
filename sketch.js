@@ -22,6 +22,13 @@ let runner;
 let letters = [];
 let boundaries = [];
 
+// ------ Media related variables ------
+let font;
+
+function preload() {
+  font = loadFont("media/font/Nunito-VariableFont_wght.ttf");
+}
+
 function setup() {
   //Create Canvas and assign it to a container.
   let myCanvas = createCanvas(windowWidth, 400); //This helps to keep the sketch in the upper part: https://stackoverflow.com/questions/74905434/how-to-specify-where-to-put-a-p5-js-canvas-in-an-html-website

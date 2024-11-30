@@ -39,6 +39,7 @@ class Letter {
 
     //Display the text.
     fill(255);
+    textFont(font);
     textSize(30);
     text(this.letter, -10, 10);
     pop();

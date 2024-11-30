@@ -1,9 +1,16 @@
+/* Custom font */
+@font-face {
+  font-family: "Nunito";
+  src: url(media/font/Nunito-VariableFont_wght.ttf);
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
   background-color: rgb(232, 228, 228);
   overflow-x: hidden;
+  font-family: "Nunito";
 }
 
 /* Landing page */
