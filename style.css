@@ -191,6 +191,7 @@ canvas {
   max-height: 150px;
   margin: 0%;
   border-color: red;
+  border-left: 300px;
 }
 
 .contact_me_media_top_photo {
@@ -215,21 +216,21 @@ canvas {
 @keyframes slide-out {
   from {
     transform: translateX(0);
-    opacity: 100%;
+    /* opacity: 100%; */
   }
   to {
     transform: translateX(100%);
-    opacity: 0%;
+    /* opacity: 0%; */
   }
 }
 
 @keyframes slide-in {
   from {
     transform: translateX(100%);
-    opacity: 0%;
+    /* opacity: 0%; */
   }
   to {
     transform: translateX(0%);
-    opacity: 100%;
+    /* opacity: 100%; */
   }
 }
