@@ -24,14 +24,14 @@ class Letter {
     rotate(angle);
     rectMode(CENTER);
     noFill();
-    stroke(255);
-    strokeWeight(2);
+    noStroke();
+    //strokeWeight(2);
     rect(0, 0, this.w, this.h);
 
     //Display the text.
     fill(255);
-    textSize(50);
-    text(this.letter, -20, 15);
+    textSize(30);
+    text(this.letter, -10, 10);
     pop();
   }
 }

@@ -53,9 +53,27 @@ function setup() {
   //Letter(letter, Position X, Position Y, Width, Height).
   //Boundary(Position X, Position Y, Width, Height, Angle Value).
 
-  letters.push(new Letter("M", 60, 40, 60, 60));
-  letters.push(new Letter("a", 90, 40, 60, 60));
-  boundaries.push(new Boundary(0, 400, 1000, 100, 0));
+  //First name.
+  letters.push(new Letter("M", 20, 40, 40, 40));
+  letters.push(new Letter("a", 60, 40, 40, 40));
+  letters.push(new Letter("r", 100, 40, 40, 40));
+  letters.push(new Letter("c", 140, 40, 40, 40));
+  letters.push(new Letter("o", 180, 40, 40, 40));
+  letters.push(new Letter("s", 220, 40, 40, 40));
+
+  //Last name.
+  letters.push(new Letter("H", 20, 110, 40, 40));
+  letters.push(new Letter("e", 60, 110, 40, 40));
+  letters.push(new Letter("r", 100, 110, 40, 40));
+  letters.push(new Letter("n", 140, 110, 40, 40));
+  letters.push(new Letter("á", 180, 110, 40, 40));
+  letters.push(new Letter("n", 220, 110, 40, 40));
+  letters.push(new Letter("d", 260, 110, 40, 40));
+  letters.push(new Letter("e", 300, 110, 40, 40));
+  letters.push(new Letter("z", 340, 110, 40, 40));
+
+  //Boundaries(Position X, Position Y, Width, Height, Angle).
+  boundaries.push(new Boundary(0, 460, 3000, 100, 0));
 
   // -- Start the engine (and only add the mouse processing at the moment)-- //
   Composite.add(engine.world, [mConstraint]);
@@ -66,7 +84,7 @@ function setup() {
 }
 
 function draw() {
-  background(0);
+  background(0, 70);
 
   //Display the letters.
   for (let i = 0; i < letters.length; i++) {
@@ -91,7 +109,30 @@ function windowResized() {
 function mousePressed() {
   for (let i = 0; i < letters.length; i++) {
     if (
-      mouseX > letters[i].body.position.x &&
+      mouseX > letters[i].body.position.x - 20 &&
+      mouseX < letters[i].body.position.x + 20 &&
+      mouseY > letters[i].body.position.y - 20 &&
+      mouseY < letters[i].body.position.y + 40 &&
+      letters[i].mass_is_static == true
+    ) {
+      Body.setMass(
+        letters[i].body,
+        0.01 * (letters[i].body.width * letters[i].body.height)
+      );
+      Body.setStatic(letters[i].body, false); //Solution found on:https://stackoverflow.com/questions/64087972/how-do-i-make-a-matter-body-isstatic-false-after-pressing-a-key-in-matter-js
+      letters[i].mass_is_static = false;
+    }
+  }
+}
+
+//Support for mobile screens.
+function touchStarted() {
+  for (let i = 0; i < letters.length; i++) {
+    if (
+      mouseX > letters[i].body.position.x - 20 &&
+      mouseX < letters[i].body.position.x + 20 &&
+      mouseY > letters[i].body.position.y - 20 &&
+      mouseY < letters[i].body.position.y + 40 &&
       letters[i].mass_is_static == true
     ) {
       Body.setMass(
