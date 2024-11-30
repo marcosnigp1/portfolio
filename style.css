@@ -91,7 +91,7 @@ canvas {
 }
 
 .projects h1 {
-  padding-top: 9%;
+  padding-top: 4%;
   margin: auto;
   width: 50%;
   text-align: center;
@@ -102,6 +102,10 @@ canvas {
   animation: 5s carousel infinite linear;
 }
 
+.carousel:hover {
+  animation-play-state: paused;
+}
+
 .carousel_item {
   display: flex;
   flex-direction: column;
@@ -109,13 +113,14 @@ canvas {
   justify-content: center;
   align-items: center;
   align-content: center;
-  font-size: 200%;
-  margin: 10rem;
+  font-size: 100%;
+  margin: 1rem;
   background-color: white;
+  color: black;
 }
 
 .carousel_item img {
-  width: 300%;
+  width: 100%;
 }
 
 @keyframes carousel {
