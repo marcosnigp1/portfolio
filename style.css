@@ -168,5 +168,20 @@ canvas {
 .contact_me_media img {
   width: 100%;
   max-height: 150px;
-  padding: 5%;
+  margin: 5%;
+
+  border-color: red;
+}
+
+.contact_me_media_photo:hover img {
+  animation: 2s slide-out forwards;
+}
+
+@keyframes slide-out {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
 }
