@@ -53,7 +53,8 @@ function setup() {
   //Letter(letter, Position X, Position Y, Width, Height).
   //Boundary(Position X, Position Y, Width, Height, Angle Value).
 
-  letters.push(new Letter("H", 60, 40, 60, 60));
+  letters.push(new Letter("M", 60, 40, 60, 60));
+  letters.push(new Letter("a", 90, 40, 60, 60));
   boundaries.push(new Boundary(0, 400, 1000, 100, 0));
 
   // -- Start the engine (and only add the mouse processing at the moment)-- //
@@ -70,6 +71,11 @@ function draw() {
   //Display the letters.
   for (let i = 0; i < letters.length; i++) {
     letters[i].show();
+
+    if (letters[i].position_set == false) {
+      Body.setStatic(letters[i].body, true);
+      letters[i].position_set = true;
+    }
   }
 
   //Display the boundaries.
@@ -84,12 +90,16 @@ function windowResized() {
 
 function mousePressed() {
   for (let i = 0; i < letters.length; i++) {
-    if (mouseX > letters[i].body.position.x) {
+    if (
+      mouseX > letters[i].body.position.x &&
+      letters[i].mass_is_static == true
+    ) {
       Body.setMass(
         letters[i].body,
-        2 * (letters[i].body.width * letters[i].body.height)
+        0.01 * (letters[i].body.width * letters[i].body.height)
       );
       Body.setStatic(letters[i].body, false); //Solution found on:https://stackoverflow.com/questions/64087972/how-do-i-make-a-matter-body-isstatic-false-after-pressing-a-key-in-matter-js
+      letters[i].mass_is_static = false;
     }
   }
 }
