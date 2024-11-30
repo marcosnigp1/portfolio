@@ -12,7 +12,16 @@ class Letter {
     this.h = h;
     this.position_set = false;
     this.mass_is_static = true;
+    this.body.plugin.particle = this; //Associated with collisions events.
     Composite.add(engine.world, this.body); //Without this, it will not render.
+  }
+
+  change() {
+    if (this.mass_is_static == true) {
+      Body.setMass(this.body, 0.01 * (this.body.width * this.body.height));
+      Body.setStatic(this.body, false); //Solution found on:https://stackoverflow.com/questions/64087972/how-do-i-make-a-matter-body-isstatic-false-after-pressing-a-key-in-matter-js
+      this.mass_is_static = false;
+    }
   }
 
   show() {
