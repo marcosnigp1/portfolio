@@ -33,7 +33,7 @@ body {
 .menu button {
   cursor: pointer;
   color: white;
-  font-size: 1.7vw;
+  font-size: 1.9vw;
   border: none;
   background: none;
   font-family: "Nunito";
@@ -108,11 +108,11 @@ body {
 }
 
 #about-me-right h2 {
-  font-size: 2.5vw;
+  font-size: 3.5vw;
 }
 
 #about-me-right p {
-  font-size: 1.5vw;
+  font-size: 3vw;
 }
 
 #code_logo {
@@ -165,7 +165,7 @@ canvas {
 /* First carousel. */
 .carousel_1 {
   display: inline-flex;
-  animation: 10s carousel infinite linear;
+  animation: 13s carousel infinite linear;
 }
 
 .carousel_1:hover {
@@ -175,7 +175,7 @@ canvas {
 /* Second carousel.  */
 .carousel_2 {
   display: inline-flex;
-  animation: 10s carousel infinite linear;
+  animation: 13s carousel infinite linear;
 }
 
 .carousel_2:hover {
@@ -251,7 +251,7 @@ canvas {
   align-items: center;
   align-content: center;
 
-  font-size: 2vw;
+  font-size: 3vw;
   padding-bottom: 4%;
   width: 50%;
 }
@@ -324,7 +324,7 @@ canvas {
 
   .contact_me_media_bottom_photo {
     position: absolute;
-    margin-top: -150px;
+    margin-top: -200px;
     z-index: 1;
   }
 
