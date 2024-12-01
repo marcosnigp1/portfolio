@@ -129,8 +129,9 @@ canvas {
 /* First carousel. */
 .carousel_1 {
   display: inline-flex;
-  animation: 5s carousel infinite linear;
+  animation: 10s carousel infinite linear;
 }
+
 .carousel_1:hover {
   animation-play-state: paused;
 }
@@ -138,7 +139,7 @@ canvas {
 /* Second carousel.  */
 .carousel_2 {
   display: inline-flex;
-  animation: 5s carousel infinite linear;
+  animation: 10s carousel infinite linear;
 }
 
 .carousel_2:hover {
@@ -160,6 +161,7 @@ canvas {
 
 .carousel_item img {
   width: 100%;
+  height: 100%;
 }
 
 .carousel_item h5 {
