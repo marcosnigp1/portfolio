@@ -1,4 +1,5 @@
 <!-- Videos used for assistance: https://www.youtube.com/watch?v=nAjR0Oj0J8E -->
+<!--  Materials used for assistance: https://www.w3schools.com/howto/howto_js_slideshow.asp -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,10 @@
     <!-- Landing page -->
     <section>
       <div id="myContainer">
+        <!-- Sketch script -->
         <script src="sketch.js"></script>
+        <script src="classes/boundaries.js"></script>
+        <script src="classes/letters.js"></script>
       </div>
     </section>
 
@@ -41,6 +45,7 @@
           the following programming languages, frameworks and game
           engines/editors:
         </p>
+        <p>- -- - /////- ---</p>
         <div id="code_logo">
           <img src="media/img/programming-logos/csharp.png" alt="Logo" />
           <img src="media/img/programming-logos/css.png" alt="Logo" />
@@ -52,10 +57,12 @@
           <img src="media/img/programming-logos/doombuilder.png" alt="Logo" />
           <img src="media/img/programming-logos/unity.png" alt="Logo" />
         </div>
+        <p>- -- - /////- ---</p>
         <p>
           <br />I am also an avid Linux user, I find it very comfortable to use
           personally!
         </p>
+        <p>- -- - - ---</p>
         <div id="code_logo">
           <img src="media/img/distros/debian.png" alt="Logo" />
           <img src="media/img/distros/arch.png" alt="Logo" />
@@ -71,56 +78,88 @@
         <h1>% My Projects %<br />-- - ---</h1>
       </div>
 
-      <!-- Actual projects (in a carousel) -->
-      <div class="carousel">
-        <div class="carousel_item">
-          <h5>1</h5>
+      <!-- Current projects (in a carousel) -->
+      <div class="carousel_1">
+        <div class="carousel_item fade">
+          <p class="numbertext">1/4</p>
+          <h5>Sound Project</h5>
+          <p>Worked on logic for canvas</p>
           <img src="media/placeholder-img.jpg" alt="" />
-          <button>Get</button>
         </div>
 
-        <div class="carousel_item">
-          <h5>2</h5>
+        <div class="carousel_item fade">
+          <p class="numbertext">2/4</p>
+          <h5>Virtual Reality Experiment</h5>
+          <p>Worked on logic, level design and testing.</p>
           <img src="media/placeholder-img.jpg" alt="" />
-          <button>Get</button>
         </div>
 
-        <div class="carousel_item">
-          <h5>3</h5>
+        <div class="carousel_item fade">
+          <p class="numbertext">3/4</p>
+          <h5>Richmond</h5>
+          <p>Worked on logic for canvas and acting.</p>
           <img src="media/placeholder-img.jpg" alt="" />
-          <button>Get</button>
+        </div>
+
+        <div class="carousel_item fade">
+          <p class="numbertext">4/4</p>
+          <h5>Following Uncertainty</h5>
+          <p>Worked on logic for canvas.</p>
+          <img src="media/placeholder-img.jpg" alt="" />
         </div>
       </div>
 
       <!-- Copied elements to create the illusion of movement -->
-      <div class="carousel">
+      <div class="carousel_2">
         <div class="carousel_item">
-          <h5>1</h5>
+          <p class="numbertext">1/4</p>
+          <h5>Sound Project</h5>
+          <p>Worked on logic for canvas.</p>
           <img src="media/placeholder-img.jpg" alt="" />
-          <button>Get</button>
         </div>
 
         <div class="carousel_item">
-          <h5>2</h5>
+          <p class="numbertext">2/4</p>
+          <h5>Virtual Reality Experiment</h5>
+          <p>Worked on logic, level design and testing.</p>
           <img src="media/placeholder-img.jpg" alt="" />
-          <button>Get</button>
         </div>
 
         <div class="carousel_item">
-          <h5>3</h5>
+          <p class="numbertext">3/4</p>
+          <h5>Richmond</h5>
+          <p>Worked on logic for canvas and acting.</p>
           <img src="media/placeholder-img.jpg" alt="" />
-          <button>Get</button>
         </div>
+
+        <div class="carousel_item">
+          <p class="numbertext">4/4</p>
+          <h5>Following Uncertainty</h5>
+          <p>Worked on logic for canvas.</p>
+          <img src="media/placeholder-img.jpg" alt="" />
+        </div>
+      </div>
+
+      <!-- Next and previous buttons -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+      <!-- The dots/circles -->
+      <div style="text-align: center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
       </div>
     </section>
 
     <!-- About me -->
     <section class="contact_me">
       <div class="contact_me_info">
-        <h3>//% Want to contact me? --//</h3>
+        <h3>//% Do you want to contact me? --//</h3>
         <p>
-          Make sure to do so with one of the following ways! Of course, first
-          reveal them.
+          Make sure to email me at: marcosdavidho@outlook.es, or you can also do
+          so with one of the following ways:
         </p>
         <p>--- - --- ------ -- -</p>
       </div>
@@ -160,9 +199,7 @@
       </div>
     </section>
 
-    <!-- Sketch script -->
+    <!-- Personal script -->
     <script src="script.js"></script>
-    <script src="classes/boundaries.js"></script>
-    <script src="classes/letters.js"></script>
   </body>
 </html>

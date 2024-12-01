@@ -72,11 +72,11 @@ body {
 }
 
 #about-me-right h2 {
-  font-size: 40px;
+  font-size: 2.5vw;
 }
 
 #about-me-right p {
-  font-size: 15px;
+  font-size: 1.5vw;
 }
 
 #code_logo {
@@ -89,7 +89,7 @@ body {
 }
 
 #code_logo img {
-  width: 20%;
+  width: 10%;
 }
 
 canvas {
@@ -103,7 +103,7 @@ canvas {
   color: white;
   white-space: nowrap;
   overflow: hidden;
-  padding-top: 10%;
+  padding-top: 5%;
   padding-bottom: 10%;
 }
 
@@ -112,15 +112,36 @@ canvas {
   margin: auto;
   width: 50%;
   text-align: center;
-  font-size: 60px;
+  font-size: 5vw;
 }
 
-.carousel {
+.projects h5 {
+  padding-top: 10px;
+  margin: 0;
+}
+
+.projects p {
+  font-size: 10px;
+}
+
+/* Carousels are separated because it will be transformed into a slideshow, this is for smartphone screens. */
+
+/* First carousel. */
+.carousel_1 {
+  display: inline-flex;
+  animation: 5s carousel infinite linear;
+}
+.carousel_1:hover {
+  animation-play-state: paused;
+}
+
+/* Second carousel.  */
+.carousel_2 {
   display: inline-flex;
   animation: 5s carousel infinite linear;
 }
 
-.carousel:hover {
+.carousel_2:hover {
   animation-play-state: paused;
 }
 
@@ -133,12 +154,18 @@ canvas {
   align-content: center;
   font-size: 100%;
   margin: 1rem;
-  background-color: white;
+  background-color: rgb(232, 228, 228);
   color: black;
 }
 
 .carousel_item img {
   width: 100%;
+}
+
+.carousel_item h5 {
+}
+
+.carousel_item p {
 }
 
 @keyframes carousel {
@@ -148,6 +175,20 @@ canvas {
   to {
     transform: translateX(-100%);
   }
+}
+
+/* Disable previous and next buttons, current slide number and the dots. */
+.prev,
+.next {
+  display: none;
+}
+
+.numbertext {
+  display: none;
+}
+
+.dot {
+  display: none;
 }
 
 /* ---- Contact me ---- */
@@ -172,7 +213,7 @@ canvas {
   align-items: center;
   align-content: center;
 
-  font-size: 3vw;
+  font-size: 2vw;
   padding-bottom: 4%;
   width: 50%;
 }
@@ -232,5 +273,140 @@ canvas {
   to {
     transform: translateX(0%);
     /* opacity: 100%; */
+  }
+}
+
+/* Media queries. */
+@media only screen and (max-width: 810px) {
+  /* About me  */
+  .contact_me_media_top_photo {
+    position: relative;
+    z-index: 0;
+  }
+
+  .contact_me_media_bottom_photo {
+    position: absolute;
+    margin-top: -150px;
+    z-index: 1;
+  }
+
+  /* Transform carousel into slideshow. */
+
+  .projects {
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
+  }
+
+  .carousel_1 {
+    animation: none;
+  }
+
+  .carousel_1 .carousel_item {
+    display: none;
+  }
+
+  .prev,
+  .next {
+    display: block;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    background-color: black;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+  }
+
+  /* Caption text */
+  .carousel_item h5 {
+    position: absolute;
+    color: white;
+    bottom: 3%;
+    padding-left: 22%;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 4vw;
+  }
+
+  .carousel_item p {
+    position: absolute;
+    color: white;
+    bottom: 1%;
+    padding-left: 22%;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  /* Number text (1/4 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  /* The dots/bullets/indicators */
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+
+  .active,
+  .dot:hover {
+    background-color: #717171;
+  }
+
+  /* Fading animation */
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* !!!!!!!!!!!!!!! */
+  /* Never display carousel 2. It is just a duplicate to generate the carousel effect. */
+  /* !!!!!!!!!!!!!!! */
+
+  .carousel_2 {
+    display: none;
+    animation: none;
   }
 }
