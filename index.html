@@ -7,9 +7,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Portfolio</title>
+    <title>Marcos Hernández</title>
 
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="media/favicon/favicon.png" />
 
     <script src="libraries/p5.min.js"></script>
     <script src="libraries/p5.sound.min.js"></script>
@@ -18,6 +19,19 @@
   </head>
 
   <body>
+    <!-- Fixed menu -->
+    <section>
+      <div class="menu">
+        <!-- Add location.href to buttons found on: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link -->
+        <p>%--//-</p>
+        <button onclick="location.href='#myContainer'">Home</button>
+        <button onclick="location.href='#aboutMe'">About me</button>
+        <button onclick="location.href='#myProjects'">Projects</button>
+        <button onclick="location.href='#contactMe'">Contact</button>
+        <p>-//--%</p>
+      </div>
+    </section>
+
     <!-- Landing page -->
     <section>
       <div id="myContainer">
@@ -29,7 +43,7 @@
     </section>
 
     <!-- About me -->
-    <section class="about-me">
+    <section class="about-me" id="aboutMe">
       <!-- I do not think this section is really needed. -->
       <!--      <div id="about-me-left">
         <img id="img_1" src="media/placeholder-img.jpg" alt="Placeholder" />
@@ -72,7 +86,7 @@
     </section>
 
     <!-- My projects -->
-    <section class="projects">
+    <section class="projects" id="myProjects">
       <!-- Title -->
       <div>
         <h1>% My Projects %<br />-- - ---</h1>
@@ -82,7 +96,7 @@
       <div class="carousel_1">
         <div class="carousel_item fade">
           <h5>Sound Project</h5>
-          <p>Worked on logic for canvas</p>
+          <p>Worked on logic for canvas.</p>
           <a href="https://marcosnigp1.github.io/sound-project/" target="_blank"
             ><img src="media/gifs/soundproject.gif" alt=""
           /></a>
@@ -119,7 +133,7 @@
       <div class="carousel_2">
         <div class="carousel_item">
           <h5>Sound Project</h5>
-          <p>Worked on logic for canvas</p>
+          <p>Worked on logic for canvas.</p>
           <a href="https://marcosnigp1.github.io/sound-project/" target="_blank"
             ><img src="media/gifs/soundproject.gif" alt=""
           /></a>
@@ -166,7 +180,7 @@
     </section>
 
     <!-- About me -->
-    <section class="contact_me">
+    <section class="contact_me" id="contactMe">
       <div class="contact_me_info">
         <h3>//% Do you want to contact me? --//</h3>
         <p>

@@ -11,6 +11,42 @@ body {
   background-color: rgb(232, 228, 228);
   overflow-x: hidden;
   font-family: "Nunito";
+  scroll-behavior: smooth;
+}
+
+/* Menu */
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: center;
+
+  position: fixed;
+  background-color: black;
+  width: 100%;
+  z-index: 100; /* Above everything! */
+  height: 5%;
+}
+
+.menu button {
+  cursor: pointer;
+  color: white;
+  font-size: 1.7vw;
+  border: none;
+  background: none;
+  font-family: "Nunito";
+}
+
+.menu button:hover {
+  color: rgb(172, 162, 162);
+  font-size: 1.7vw;
+}
+
+.menu p {
+  color: white;
+  font-size: 1.7vw;
 }
 
 /* Landing page */

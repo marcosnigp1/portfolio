@@ -28,7 +28,7 @@ let bg;
 
 function preload() {
   font = loadFont("media/font/CedarvilleCursive-Regular.ttf");
-  bg = loadImage("media/bg.png");
+  bg = loadImage("media/img/sketch/bg.png");
 }
 
 function setup() {
