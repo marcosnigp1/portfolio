@@ -200,12 +200,6 @@ canvas {
   height: 100%;
 }
 
-.carousel_item h5 {
-}
-
-.carousel_item p {
-}
-
 @keyframes carousel {
   from {
     transform: translateX(0);
