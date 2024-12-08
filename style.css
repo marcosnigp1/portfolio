@@ -49,6 +49,10 @@ body {
   font-size: 1.7vw;
 }
 
+.menu #p_transparent {
+  opacity: 25%;
+}
+
 /* Landing page */
 #myContainer {
   padding-top: 10%;
@@ -115,6 +119,17 @@ body {
   font-size: 3vw;
 }
 
+.things_i_know {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-evenly;
+
+  text-align: center;
+}
+
 #code_logo {
   display: flex;
   flex-direction: row;
@@ -125,7 +140,7 @@ body {
 }
 
 #code_logo img {
-  width: 10%;
+  max-width: 50px;
 }
 
 canvas {
@@ -308,6 +323,19 @@ canvas {
   }
 }
 
+/* For laptop/desktop screens. */
+@media only screen and (max-width: 2144px) {
+  /* About me section */
+
+  #about-me-right h2 {
+    font-size: 2.5vw;
+  }
+
+  #about-me-right p {
+    font-size: 1.5vw;
+  }
+}
+
 /* Media queries. */
 @media only screen and (max-width: 810px) {
   /* About me  */
@@ -320,6 +348,15 @@ canvas {
     position: absolute;
     margin-top: -200px;
     z-index: 1;
+  }
+
+  /* Text for about me */
+  #about-me-right h2 {
+    font-size: 3.5vw;
+  }
+
+  #about-me-right p {
+    font-size: 3vw;
   }
 
   /* Transform carousel into slideshow. */

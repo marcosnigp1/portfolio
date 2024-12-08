@@ -23,12 +23,12 @@
     <section>
       <div class="menu">
         <!-- Add location.href to buttons found on: https://stackoverflow.com/questions/2906582/how-do-i-create-an-html-button-that-acts-like-a-link -->
-        <p>%--//-</p>
+        <p id="p_transparent">/--</p>
         <button onclick="location.href='#myContainer'">Home</button>
         <button onclick="location.href='#aboutMe'">About me</button>
         <button onclick="location.href='#myProjects'">Projects</button>
         <button onclick="location.href='#contactMe'">Contact</button>
-        <p>-//--%</p>
+        <p id="p_transparent">--/</p>
       </div>
     </section>
 
@@ -50,38 +50,76 @@
         <img id="img_2" src="media/placeholder-img.jpg" alt="Placeholder" />
       </div> -->
       <div id="about-me-right">
-        <h2>-- % A rather curious programmer. //</h2>
+        <h2>/-- A rather curious programmer --\</h2>
         <p>
           I am Marcos David Hernández Ortigoza. A programmer who enjoys
           experimenting with new posibilities and ideas. In other words, I
           always ask myself the following question: "What is possible?".
-          <br /><br />I have experience with video and audio edition, and woth
-          the following programming languages, frameworks and game
-          engines/editors:
+          <br /><br />I have experience with video and audio edition, and with
+          the following programming languages, operating systems, frameworks and
+          game engines/editors:
         </p>
-        <p>- -- - /////- ---</p>
-        <div id="code_logo">
-          <img src="media/img/programming-logos/csharp.png" alt="Logo" />
-          <img src="media/img/programming-logos/css.png" alt="Logo" />
-          <img src="media/img/programming-logos/dj.png" alt="Logo" />
-          <img src="media/img/programming-logos/html.png" alt="Logo" />
-          <img src="media/img/programming-logos/js.png" alt="Logo" />
-          <img src="media/img/programming-logos/p5js.png" alt="Logo" />
-          <img src="media/img/programming-logos/python.png" alt="Logo" />
-          <img src="media/img/programming-logos/doombuilder.png" alt="Logo" />
-          <img src="media/img/programming-logos/unity.png" alt="Logo" />
+        <div class="things_i_know">
+          <!-- Softwares -->
+          <div>
+            <p>/------------- Software -------------\</p>
+            <div id="code_logo">
+              <img src="media/img/programming-logos/python.png" alt="Logo" />
+              <img src="media/img/programming-logos/csharp.png" alt="Logo" />
+              <img src="media/img/programming-logos/css.png" alt="Logo" />
+              <img src="media/img/programming-logos/html.png" alt="Logo" />
+              <img src="media/img/programming-logos/js.png" alt="Logo" />
+            </div>
+            <p>\------------------------------------/</p>
+          </div>
+
+          <!-- Programming languages -->
+          <div>
+            <p>/----- Programming languages -----\</p>
+            <div id="code_logo">
+              <img src="media/img/programming-logos/python.png" alt="Logo" />
+              <img src="media/img/programming-logos/csharp.png" alt="Logo" />
+              <img src="media/img/programming-logos/css.png" alt="Logo" />
+              <img src="media/img/programming-logos/html.png" alt="Logo" />
+              <img src="media/img/programming-logos/js.png" alt="Logo" />
+            </div>
+            <p>\------------------------------------/</p>
+          </div>
+
+          <!-- Frameworks -->
+          <div>
+            <p>/----------- Frameworks -----------\</p>
+            <div id="code_logo">
+              <img src="media/img/programming-logos/dj.png" alt="Logo" />
+              <img src="media/img/programming-logos/p5js.png" alt="Logo" />
+            </div>
+            <p>\------------------------------------/</p>
+          </div>
+
+          <!-- Game engines -->
+          <div>
+            <p>/--------- Game Engines -----------\</p>
+            <div id="code_logo">
+              <img
+                src="media/img/programming-logos/doombuilder.png"
+                alt="Logo"
+              />
+              <img src="media/img/programming-logos/unity.png" alt="Logo" />
+            </div>
+            <p>\------------------------------------/</p>
+          </div>
         </div>
-        <p>- -- - /////- ---</p>
-        <p>
-          <br />I am also an avid Linux user, I find it very comfortable to use
-          personally!
-        </p>
-        <p>- -- - - ---</p>
-        <div id="code_logo">
-          <img src="media/img/distros/debian.png" alt="Logo" />
-          <img src="media/img/distros/arch.png" alt="Logo" />
+
+        <!-- Operating systems -->
+          <div>
+            <p>/------- Operating systems ---------\</p>
+            <div id="code_logo">
+              <img src="media/img/distros/debian.png" alt="Logo" />
+              <img src="media/img/distros/arch.png" alt="Logo" />
+            </div>
+            <p>\------------------------------------/</p>
+          </div>
         </div>
-        <p>- -- - - ---</p>
       </div>
     </section>
 
@@ -89,7 +127,7 @@
     <section class="projects" id="myProjects">
       <!-- Title -->
       <div>
-        <h1>% My Projects %<br />-- - ---</h1>
+        <h1>/-- My Projects --\<br />-- - ---</h1>
       </div>
 
       <!-- Current projects (in a carousel) -->
