@@ -46,7 +46,7 @@ class Letter {
     translate(pos.x, pos.y);
     rotate(angle);
     rectMode(CENTER);
-    noFill();
+    fill(17, 33, 68);
     noStroke();
     //strokeWeight(2);
     rect(0, 0, this.w, this.h);
