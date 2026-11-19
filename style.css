@@ -1,579 +1,75 @@
-/* Custom font */
-@font-face {
-  font-family: "Nunito";
-  src: url(media/font/Nunito-VariableFont_wght.ttf);
+* {
+  box-sizing: border-box;
 }
 
-html,
 body {
   margin: 0;
-  padding: 0;
-  background-color: rgb(232, 228, 228);
-  overflow-x: hidden;
-  font-family: "Nunito";
-  scroll-behavior: smooth;
+  padding: 16px;
 }
 
-/* Menu */
-.menu {
+/* Flexboxes for the general layout. */
+
+.general-container {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
-
-  position: fixed;
-  background-color: black;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 24px;
   width: 100%;
-  z-index: 100; /* Above everything! */
-  height: 8%;
+  max-width: 1440px;
 }
 
-.menu button {
-  cursor: pointer;
-  color: white;
-  font-size: 1.9vw;
-  border: none;
-  background: none;
-  font-family: "Nunito";
-  background-color: #112144;
+.sidebar {
+  flex: 0 0 clamp(140px, 15vw, 200px);
 }
 
-.menu button:hover {
-  color: rgb(172, 162, 162);
-  font-size: 1.7vw;
+.content-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 320px));
+  justify-content: start;
+  align-items: start;
+  gap: 16px;
+  flex: 1 1 0;
+  min-width: 0;
 }
 
-.menu p {
-  color: white;
-  font-size: 1.7vw;
-}
-
-.menu #p_transparent {
-  opacity: 25%;
-}
-
-/* Landing page */
-#myContainer {
-  padding-top: 10%;
-  padding-bottom: 0%;
-  background-color: black;
-}
-
-/* ---- About me section ---- */
-.about-me {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-
-  padding-top: 3%;
-  padding-bottom: 3%;
-}
-
-/* Left side */
-#about-me-left {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-
-  width: 30%;
-}
-
-#img_1 {
-  position: relative;
+.item {
   width: 100%;
-  z-index: 2;
+  max-width: 320px;
+  min-width: 0;
 }
 
-#img_2 {
-  position: relative;
-  width: 80%;
-  right: 15%;
-  top: 30%;
-  z-index: 1;
-}
-
-/* Right side */
-#about-me-right {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: center;
-
-  width: 50%;
-}
-
-#about-me-right h2 {
-  font-size: 3.5vw;
-  text-align: center;
-}
-
-#about-me-right p {
-  font-size: 3vw;
-}
-
-.things_i_know {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-evenly;
-  align-items: center;
-  align-content: space-evenly;
-
-  text-align: center;
-}
-
-#code_logo {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-}
-
-#code_logo img {
-  max-width: 50px;
-}
-
-canvas {
+.item img {
   display: block;
-}
-
-/* ---- Projects section ---- */
-
-.projects {
-  background-color: black;
-  color: white;
-  white-space: nowrap;
-  overflow: hidden;
-  padding-top: 5%;
-  padding-bottom: 10%;
-}
-
-.projects h2 {
-  padding-bottom: 5%;
-  margin: auto;
-  width: 50%;
-  text-align: center;
-  font-size: 5vw;
-}
-
-.projects h5 {
-  padding-top: 10px;
-  margin: 0;
-}
-
-.projects p {
-  font-size: 10px;
-}
-
-/* Carousels are separated because it will be transformed into a slideshow, this is for smartphone screens. */
-
-/* First carousel. */
-.carousel_1 {
-  display: inline-flex;
-  animation: 13s carousel infinite linear;
-}
-
-.carousel_1:hover {
-  animation-play-state: paused;
-}
-
-/* Second carousel.  */
-.carousel_2 {
-  display: inline-flex;
-  animation: 13s carousel infinite linear;
-}
-
-.carousel_2:hover {
-  animation-play-state: paused;
-}
-
-.carousel_item {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  font-size: 100%;
-  margin: 1rem;
-  background-color: rgb(232, 228, 228);
-  color: black;
-}
-
-.carousel_item img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
 }
 
-@keyframes carousel {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-/* Disable previous and next buttons, current slide number and the dots. */
-.prev,
-.next {
-  display: none;
-}
-
-.numbertext {
-  display: none;
-}
-
-.dot {
-  display: none;
-}
-
-/* ---- Contact me ---- */
-
-.contact_me {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-
-  padding-top: 15%;
-  padding-bottom: 10%;
-}
-
-.contact_me_info {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-
-  font-size: 3vw;
-  margin-bottom: 10%;
-  width: 50%;
-}
-
-#contact_title {
-  position: absolute;
-  margin: auto;
+.item p {
+  margin: 12px 0 0;
   width: 100%;
-  text-align: center;
-  font-size: 3.5vw;
-  padding-top: 5%;
+  overflow-wrap: anywhere;
 }
 
-/* Contact me form code from: https://www.w3schools.com/howto/howto_css_contact_form.asp  */
-
-/* Style inputs with type="text", select elements and textareas */
-input[type="text"],
-input[type="email"],
-select,
-textarea {
-  width: 100%; /* Full width */
-  padding: 12px; /* Some padding */
-  border: 1px solid #ccc; /* Gray border */
-  border-radius: 4px; /* Rounded borders */
-  box-sizing: border-box; /* Make sure that padding and width stays in place */
-  margin-top: 6px; /* Add a top margin */
-  margin-bottom: 5px; /* Bottom margin */
-  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
-}
-
-/* Style the submit button with a specific background color etc */
-input[type="submit"] {
-  background-color: #112144;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  width: 50%;
-  margin-left: 22%;
-}
-
-/* When moving the mouse over the submit button, add a darker green color */
-input[type="submit"]:hover {
-  color: rgb(255, 255, 255);
-}
-
-/* Add a background color and some padding around the form */
-.container {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-}
-
-.contact_me_media {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  align-items: center;
-  align-content: center;
-  margin-bottom: 15.4%;
-}
-
-.contact_me_media img {
-  width: 100%;
-  max-height: 150px;
-  margin: 0%;
-  border-color: red;
-  border-left: 300px;
-}
-
-.contact_me_media_top_photo {
-  position: relative;
-  z-index: 1;
-}
-
-.contact_me_media_bottom_photo {
-  position: absolute;
-  margin-top: -150px;
-  z-index: 0;
-}
-
-.contact_me_media_top_photo:hover img {
-  animation: 2s slide-out forwards;
-}
-
-.contact_me_media_top_photo:not(hover) img {
-  animation: 2s slide-in forwards;
-}
-
-@keyframes slide-out {
-  from {
-    transform: translateX(0);
-    /* opacity: 100%; */
-  }
-  to {
-    transform: translateX(100%);
-    /* opacity: 0%; */
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-    /* opacity: 0%; */
-  }
-  to {
-    transform: translateX(0%);
-    /* opacity: 100%; */
-  }
-}
-
-/* For laptop/desktop screens. */
-@media only screen and (max-width: 5000px) {
-  /* About me section */
-
-  #about-me-right h2 {
-    font-size: 2.5vw;
+/* Media queries for responsive design. In other words, phone!*/
+@media (max-width: 768px) {
+  body {
+    padding: 12px;
   }
 
-  #about-me-right p {
-    font-size: 1.3vw;
-  }
-
-  /* Project section */
-  .projects h2 {
-    font-size: 3.5vw;
-  }
-
-  /* Contact section */
-  .contact_me_info {
-    font-size: 1.3vw;
-    width: 30%;
-  }
-
-  .contact_me_media {
-    font-size: 1.3vw;
-    width: 30%;
-  }
-}
-
-/* Media queries. */
-@media only screen and (max-width: 810px) {
-  /* Menu */
-
-  .menu {
-    height: 6%;
-  }
-
-  .menu button {
-    height: 50%;
-    width: 16%;
-    font-size: 2.5vw;
-  }
-
-  /* Contact section */
-  #contact_title {
-    font-size: 3.5vw;
-    width: 100%;
-    padding-bottom: 20%;
-  }
-
-  .contact_me_info {
-    font-size: 2.8vw;
-    width: 60%;
-    padding-bottom: 20%;
-  }
-
-  .contact_me_media {
-    font-size: 2.8vw;
-    width: 60%;
-  }
-
-  .contact_me_media_top_photo {
-    position: relative;
-    z-index: 0;
-  }
-
-  .contact_me_media_bottom_photo {
-    position: absolute;
-    margin-top: -156px;
-    z-index: 1;
-  }
-
-  /* Text for about me */
-  #about-me-right h2 {
-    font-size: 3.5vw;
-  }
-
-  #about-me-right p {
-    font-size: 3vw;
-  }
-
-  /* Transform carousel into slideshow. */
-
-  .projects {
-    max-width: 1000px;
-    position: relative;
-    margin: auto;
-  }
-
-  .carousel_1 {
-    animation: none;
-  }
-
-  .carousel_1 .carousel_item {
-    display: none;
-  }
-
-  .prev,
-  .next {
+  .general-container {
     display: block;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    margin-top: -22px;
-    padding: 16px;
-    color: white;
-    background-color: black;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
   }
 
-  /* Position the "next button" to the right */
-  .next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(255, 255, 255, 0.8);
-    color: black;
-  }
-
-  /* Caption text */
-  .carousel_item h5 {
-    position: absolute;
-    color: white;
-    bottom: 3%;
-    padding-left: 22%;
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    font-size: 4vw;
-  }
-
-  .carousel_item p {
-    position: absolute;
-    color: white;
-    bottom: 1%;
-    padding-left: 22%;
-    margin: auto;
-    width: 50%;
-    text-align: center;
-    font-size: 3vw;
-  }
-
-  /* Number text (1/4 etc) */
-  .numbertext {
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-  }
-
-  /* The dots/bullets/indicators */
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-
-  .active,
-  .dot:hover {
-    background-color: #717171;
-  }
-
-  /* Fading animation */
-  .fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-  }
-
-  @keyframes fade {
-    from {
-      opacity: 0.4;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  /* !!!!!!!!!!!!!!! */
-  /* Never display carousel 2. It is just a duplicate to generate the carousel effect. */
-  /* !!!!!!!!!!!!!!! */
-
-  .carousel_2 {
+  .sidebar {
     display: none;
-    animation: none;
+  }
+
+  .content-container {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
