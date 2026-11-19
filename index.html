@@ -16,18 +16,43 @@
   <body>
     <!-- Title section / Header -->
     <header class="header">
-      <h1>Marcos Hernandez</h1>
-      <p>Creative technologist</p>
+      <div class="header-title">
+        <h1>Marcos Hernandez</h1>
+        <p>Creative technologist</p>
+      </div>
+
+      <details class="nav-menu">
+        <summary aria-label="Open navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </summary>
+        <nav aria-label="Main navigation">
+          <a href="#">Capstone Project</a>
+          <a href="#">About Me</a>
+          <a href="#">Contact</a>
+        </nav>
+      </details>
     </header>
 
     <div id="general-container" class="general-container">
       <!-- Side bar -->
       <div class="sidebar">
         <ul>
+          <li><a href="#">Capstone Project</a></li>
           <li><a href="#">About Me</a></li>
-          <li><a href="#">Projects</a></li>
           <li><a href="#">Contact</a></li>
         </ul>
+
+        <div class="year-filter" aria-label="Filter projects by year">
+          <label for="year">Year</label>
+          <select id="year" name="year">
+            <option value="">All years</option>
+            <option value="2026">2026</option>
+            <option value="2025">2025</option>
+            <option value="2024">2024</option>
+          </select>
+        </div>
       </div>
       <!-- Main content -->
       <div class="content-container">
