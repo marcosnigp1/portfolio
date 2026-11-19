@@ -5,6 +5,52 @@
 body {
   margin: 0;
   padding: 16px;
+  font-family: "Karla", sans-serif;
+  color: #f5f5f5;
+  background-color: #121212;
+  scroll-behavior: smooth;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 16px 0 24px;
+  background-color: #121212;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  line-height: 1;
+  color: inherit;
+}
+
+.header p {
+  margin: 0 0 24px;
+  color: inherit;
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 180px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sidebar a {
+  color: #f5f5f5;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  color: #ffffff;
 }
 
 /* Flexboxes for the general layout. */
@@ -20,7 +66,13 @@ body {
 }
 
 .sidebar {
+  position: sticky;
+  top: 150px;
+  align-self: start;
+  height: fit-content;
   flex: 0 0 clamp(140px, 15vw, 200px);
+  border-right: 1px solid rgba(245, 245, 245, 0.08);
+  padding-right: 16px;
 }
 
 .content-container {
