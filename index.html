@@ -57,42 +57,78 @@
       </div>
       <!-- Main content -->
       <div class="content-container">
-        <button class="item" type="button" data-project>
+        <button
+          class="item"
+          type="button"
+          data-project
+          data-title="First project"
+          data-description="The first project explores interactive media and visual storytelling."
+        >
           <img src="media/placeholder.png" alt="Placeholder project image" />
           <p>
             lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum
             dolor sit amet, consectetur adipiscing elit.
           </p>
         </button>
-        <button class="item" type="button" data-project>
+        <button
+          class="item"
+          type="button"
+          data-project
+          data-title="Second project"
+          data-description="The second project presents a selected experiment or completed design."
+        >
           <img src="media/placeholder2.png" alt="Placeholder project image 2" />
           <p>
             lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum
             dolor sit amet, consectetur adipiscing elit.
           </p>
         </button>
-        <button class="item" type="button" data-project>
+        <button
+          class="item"
+          type="button"
+          data-project
+          data-title="Third project"
+          data-description="The third project focuses on visual systems and digital experiences."
+        >
           <img src="media/placeholder3.png" alt="Placeholder project image 3" />
           <p>
             lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum
             dolor sit amet, consectetur adipiscing elit.
           </p>
         </button>
-        <button class="item" type="button" data-project>
+        <button
+          class="item"
+          type="button"
+          data-project
+          data-title="Fourth project"
+          data-description="The fourth project documents a process from concept through final output."
+        >
           <img src="media/placeholder2.png" alt="Placeholder project image 2" />
           <p>
             lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum
             dolor sit amet, consectetur adipiscing elit.
           </p>
         </button>
-        <button class="item" type="button" data-project>
+        <button
+          class="item"
+          type="button"
+          data-project
+          data-title="Fifth project"
+          data-description="The fifth project combines technology, form, and user interaction."
+        >
           <img src="media/placeholder3.png" alt="Placeholder project image 3" />
           <p>
             lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum
             dolor sit amet, consectetur adipiscing elit.
           </p>
         </button>
-        <button class="item" type="button" data-project>
+        <button
+          class="item"
+          type="button"
+          data-project
+          data-title="Sixth project"
+          data-description="The sixth project is a creative study presented as an expanded portfolio item."
+        >
           <img src="media/placeholder.png" alt="Placeholder project image" />
           <p>
             lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum
@@ -102,11 +138,34 @@
       </div>
 
       <aside class="project-detail" aria-live="polite" aria-hidden="true">
-        <button class="project-detail-close" type="button" aria-label="Close project">
+        <button
+          class="project-detail-close"
+          type="button"
+          aria-label="Close project"
+        >
           &times;
         </button>
-        <img src="media/placeholder.png" alt="" />
-        <p></p>
+        <iframe
+          class="project-detail-video"
+          src="https://www.youtube.com/embed/jIwoFDffO3c?si=ijTq3_9Y1yb3WNML"
+          title="YouTube video player"
+          frameborder="0"
+          allow="
+            accelerometer;
+            autoplay;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+            web-share;
+          "
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+          hidden
+        ></iframe>
+        <img src="media/placeholder.png" alt="" hidden />
+        <h2 class="project-detail-title"></h2>
+        <p class="project-detail-description"></p>
       </aside>
     </div>
   </body>

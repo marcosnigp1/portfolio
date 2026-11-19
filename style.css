@@ -228,8 +228,29 @@ body {
   object-fit: cover;
 }
 
-.project-detail p {
+.project-detail-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.project-detail-video[hidden] {
+  display: none;
+}
+
+.project-detail img[hidden] {
+  display: none;
+}
+
+.project-detail-title {
+  margin: 16px 0 8px;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.project-detail-description {
   margin: 16px 0 0;
+  line-height: 1.6;
 }
 
 .project-detail-close {
