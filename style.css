@@ -83,6 +83,18 @@ body {
   color: inherit;
 }
 
+.back-link {
+  color: #f5f5f5;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.back-link:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 .sidebar ul {
   display: flex;
   flex-direction: column;
@@ -241,6 +253,164 @@ body {
 .project-detail-close:hover {
   color: #ffffff;
   background: rgba(245, 245, 245, 0.08);
+}
+
+/* Section pages */
+.section-page {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.section-page .header {
+  position: relative;
+  border-bottom: 1px solid rgba(245, 245, 245, 0.12);
+}
+
+.section-page .back-link {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-align: center;
+  background: rgba(245, 245, 245, 0.04);
+}
+
+.section-intro {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(32px, 8vw, 128px);
+  max-width: 1100px;
+  margin: 48px auto 80px;
+}
+
+.section-intro h2 {
+  flex: 0 0 min(38%, 420px);
+  margin: 0;
+  font-size: clamp(3rem, 7vw, 7rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+}
+
+.section-intro > div {
+  flex: 1 1 420px;
+  max-width: 620px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.section-intro p {
+  margin: 0;
+}
+
+.section-columns {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-top: 32px;
+}
+
+.section-columns article {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 520px;
+}
+
+.section-columns h3 {
+  margin: 0 0 12px;
+  font-size: 1.25rem;
+}
+
+.section-columns p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.section-placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 16px;
+  object-fit: cover;
+}
+
+.section-followup {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1280px;
+  margin: 48px auto 0;
+  padding-top: 32px;
+}
+
+.section-followup figure,
+.section-followup article {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 520px;
+  margin: 0;
+}
+
+.section-followup figcaption {
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+
+.section-followup p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .section-page .header {
+    align-items: center;
+  }
+
+  .section-page .back-link {
+    position: static;
+    transform: none;
+  }
+
+  .section-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin: 32px 0 48px;
+  }
+
+  .section-intro h2 {
+    flex-basis: auto;
+    font-size: clamp(2.75rem, 14vw, 4.5rem);
+  }
+
+  .section-intro > div {
+    max-width: none;
+  }
+
+  .section-columns {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .section-columns article {
+    max-width: none;
+  }
+
+  .section-followup {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .section-followup figure,
+  .section-followup article {
+    width: 100%;
+    max-width: none;
+  }
 }
 
 
